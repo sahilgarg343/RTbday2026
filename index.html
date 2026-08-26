@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f6e8ec">
+
 <title>For Rekha — Happy Happy Birthmonth ❤️</title>
 
 <style>
@@ -18,8 +19,7 @@
   --gold:#c69b62;
   --shadow:0 24px 70px rgba(87,58,72,.16);
 
-  /* Space reserved for bottom navigation */
-  --nav-space:88px;
+  --nav-space:92px;
 }
 
 *{
@@ -43,6 +43,7 @@ button{
   font:inherit;
 }
 
+
 /* =========================================================
    SCREENS
    ========================================================= */
@@ -50,12 +51,19 @@ button{
 .screen{
   position:fixed;
   inset:0;
+
   display:grid;
   place-items:center;
+
   padding:28px;
+
   opacity:0;
   visibility:hidden;
-  transition:opacity .9s ease,visibility .9s;
+
+  transition:
+    opacity .9s ease,
+    visibility .9s;
+
   overflow:hidden;
 }
 
@@ -68,8 +76,9 @@ button{
   opacity:0;
 }
 
+
 /* =========================================================
-   BACKGROUND
+   BACKGROUNDS
    ========================================================= */
 
 .bg{
@@ -77,25 +86,53 @@ button{
   inset:-10%;
 
   background:
-    radial-gradient(circle at 20% 20%,#f7dce5 0 12%,transparent 35%),
-    radial-gradient(circle at 80% 30%,#e8def4 0 13%,transparent 37%),
-    radial-gradient(circle at 50% 100%,#fff0d9 0 12%,transparent 38%),
-    linear-gradient(135deg,#fffaf7,#f8edf2);
+    radial-gradient(
+      circle at 20% 20%,
+      #f7dce5 0 12%,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      #e8def4 0 13%,
+      transparent 37%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      #fff0d9 0 12%,
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      #fffaf7,
+      #f8edf2
+    );
 
-  animation:drift 16s ease-in-out infinite alternate;
+  animation:
+    drift 16s ease-in-out infinite alternate;
 }
 
 .bg.dark{
   background:
-    radial-gradient(circle at 50% 30%,#4e3946,transparent 38%),
-    linear-gradient(135deg,#221c24,#352633);
+    radial-gradient(
+      circle at 50% 30%,
+      #4e3946,
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      #221c24,
+      #352633
+    );
 }
 
 @keyframes drift{
   to{
-    transform:scale(1.08) translate(1%,-1%);
+    transform:
+      scale(1.08)
+      translate(1%,-1%);
   }
 }
+
 
 /* =========================================================
    CONTENT
@@ -106,15 +143,12 @@ button{
   z-index:2;
 
   width:min(920px,100%);
-  max-height:calc(100vh - 40px);
+
+  max-height:
+    calc(100vh - 30px);
 
   text-align:center;
 
-  /*
-     IMPORTANT:
-     Reserve enough room at the bottom so the
-     fixed navigation slider never overlaps content.
-  */
   padding-bottom:var(--nav-space);
 
   display:flex;
@@ -159,6 +193,7 @@ button{
   color:var(--gold);
 }
 
+
 /* =========================================================
    OPEN BUTTON
    ========================================================= */
@@ -166,20 +201,32 @@ button{
 .open-btn{
   border:0;
   border-radius:999px;
+
   padding:15px 25px;
+
   background:#fff;
   color:#5b4c55;
-  box-shadow:0 12px 35px rgba(75,48,63,.15);
+
+  box-shadow:
+    0 12px 35px rgba(75,48,63,.15);
+
   cursor:pointer;
+
   font-weight:600;
   letter-spacing:.08em;
-  transition:transform .25s,box-shadow .25s;
+
+  transition:
+    transform .25s,
+    box-shadow .25s;
 }
 
 .open-btn:hover{
   transform:translateY(-3px);
-  box-shadow:0 18px 45px rgba(75,48,63,.2);
+
+  box-shadow:
+    0 18px 45px rgba(75,48,63,.2);
 }
+
 
 /* =========================================================
    PHOTOS
@@ -187,22 +234,28 @@ button{
 
 .photo-wrap{
   width:min(420px,80vw);
-  height:min(590px,60vh);
+  height:min(590px,58vh);
 
   margin:12px auto;
 
   border-radius:26px;
+
   overflow:hidden;
 
   box-shadow:var(--shadow);
 
   position:relative;
+
   background:#eee;
 
-  transform:translateY(20px) scale(.97);
+  transform:
+    translateY(20px)
+    scale(.97);
+
   opacity:0;
 
-  transition:1.2s cubic-bezier(.2,.8,.2,1);
+  transition:
+    1.2s cubic-bezier(.2,.8,.2,1);
 
   flex-shrink:1;
 }
@@ -215,18 +268,22 @@ button{
 .photo-wrap img{
   width:100%;
   height:100%;
+
   object-fit:cover;
+
   display:block;
 
-  animation:slowzoom 10s ease-out both;
+  animation:
+    slowzoom 10s ease-out both;
 }
 
 .photo-wrap.wide{
   width:min(760px,92vw);
-  height:min(56vh,620px);
+  height:min(54vh,620px);
 }
 
 @keyframes slowzoom{
+
   from{
     transform:scale(1.05);
   }
@@ -234,16 +291,20 @@ button{
   to{
     transform:scale(1);
   }
+
 }
 
+
 /* =========================================================
-   MESSAGE
+   MESSAGES
    ========================================================= */
 
 .message{
-  margin:14px auto;
+  margin:12px auto;
+
   max-width:800px;
-  min-height:90px;
+
+  min-height:85px;
 }
 
 .small{
@@ -255,8 +316,15 @@ button{
 .signature{
   font-family:'Cormorant Garamond',serif;
   font-size:1.5rem;
-  margin-top:20px;
+  margin-top:18px;
+
+  /*
+     Extra bottom protection specifically
+     for the signature area.
+  */
+  padding-bottom:8px;
 }
+
 
 /* =========================================================
    QUOTES
@@ -264,16 +332,24 @@ button{
 
 .quote{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2rem,6vw,4.5rem);
+
+  font-size:
+    clamp(2rem,6vw,4.5rem);
+
   line-height:1.02;
+
   max-width:850px;
+
   margin:auto;
 }
 
 .quote span{
   display:block;
+
   opacity:0;
+
   transform:translateY(16px);
+
   transition:.9s;
 }
 
@@ -290,24 +366,25 @@ button{
   transition-delay:1.4s;
 }
 
+
 /* =========================================================
    BOTTOM NAVIGATION
    ========================================================= */
 
 .nav{
   position:fixed;
+
   z-index:100;
 
-  /*
-     Keep navigation safely above the bottom edge.
-     env() handles phones with a home indicator.
-  */
-  bottom:max(18px,env(safe-area-inset-bottom));
+  bottom:
+    max(18px,env(safe-area-inset-bottom));
 
   left:50%;
+
   transform:translateX(-50%);
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 
@@ -319,7 +396,8 @@ button{
 
   border-radius:999px;
 
-  background:rgba(255,255,255,.82);
+  background:
+    rgba(255,255,255,.84);
 
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
@@ -329,10 +407,9 @@ button{
     0 2px 8px rgba(70,45,58,.06);
 }
 
-/* Navigation arrows */
-
 .nav button{
   border:0;
+
   background:transparent;
 
   width:34px;
@@ -345,6 +422,7 @@ button{
   color:#6b5963;
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 
@@ -356,26 +434,22 @@ button{
 }
 
 .nav button:hover{
-  background:rgba(210,184,198,.28);
+  background:
+    rgba(210,184,198,.28);
 }
 
 .nav button:active{
   transform:scale(.9);
 }
 
-/* Dots */
-
 .dots{
   display:flex;
+
   align-items:center;
   justify-content:center;
 
   gap:5px;
 
-  /*
-     Prevent a long row of dots from becoming
-     wider than the screen.
-  */
   max-width:55vw;
 
   overflow:hidden;
@@ -402,15 +476,18 @@ button{
 
 .dot.on{
   background:#7f6471;
+
   transform:scale(1.4);
 }
 
+
 /* =========================================================
-   MUSIC BUTTON
+   MUSIC
    ========================================================= */
 
 .music{
   position:fixed;
+
   z-index:110;
 
   top:18px;
@@ -420,14 +497,17 @@ button{
   height:42px;
 
   border:0;
+
   border-radius:50%;
 
-  background:rgba(255,255,255,.7);
+  background:
+    rgba(255,255,255,.7);
 
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
 
-  box-shadow:0 8px 25px rgba(70,45,58,.12);
+  box-shadow:
+    0 8px 25px rgba(70,45,58,.12);
 
   cursor:pointer;
 }
@@ -437,12 +517,15 @@ button{
 }
 
 @keyframes pulse{
+
   50%{
     box-shadow:
       0 0 0 9px rgba(233,185,199,.18),
       0 8px 25px rgba(70,45,58,.12);
   }
+
 }
+
 
 /* =========================================================
    PARTICLES
@@ -451,7 +534,9 @@ button{
 .particles{
   position:absolute;
   inset:0;
+
   overflow:hidden;
+
   pointer-events:none;
 }
 
@@ -463,9 +548,11 @@ button{
 
   border-radius:50%;
 
-  background:rgba(198,155,98,.35);
+  background:
+    rgba(198,155,98,.35);
 
-  animation:float 9s linear infinite;
+  animation:
+    float 9s linear infinite;
 }
 
 .petal{
@@ -474,16 +561,23 @@ button{
   width:13px;
   height:8px;
 
-  border-radius:100% 0 100% 0;
+  border-radius:
+    100% 0 100% 0;
 
-  background:rgba(226,173,190,.38);
+  background:
+    rgba(226,173,190,.38);
 
-  animation:petal 11s linear infinite;
+  animation:
+    petal 11s linear infinite;
 }
 
 @keyframes float{
+
   from{
-    transform:translateY(110vh) scale(.6);
+    transform:
+      translateY(110vh)
+      scale(.6);
+
     opacity:0;
   }
 
@@ -499,9 +593,11 @@ button{
 
     opacity:0;
   }
+
 }
 
 @keyframes petal{
+
   from{
     transform:
       translateY(110vh)
@@ -516,7 +612,9 @@ button{
 
     opacity:0;
   }
+
 }
+
 
 /* =========================================================
    PASSWORD SCREEN
@@ -528,6 +626,7 @@ button{
 
 .lock-card{
   position:relative;
+
   z-index:2;
 
   width:min(460px,94vw);
@@ -536,7 +635,8 @@ button{
 
   border-radius:30px;
 
-  background:rgba(255,255,255,.72);
+  background:
+    rgba(255,255,255,.72);
 
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
@@ -547,12 +647,15 @@ button{
 }
 
 .lock-card .title{
-  font-size:clamp(3.4rem,12vw,5.5rem);
+  font-size:
+    clamp(3.4rem,12vw,5.5rem);
 }
 
 .hint{
   font-size:.75rem;
+
   color:#8b7880;
+
   margin-top:15px;
 }
 
@@ -581,27 +684,35 @@ button{
     0 0 0 4px rgba(201,154,170,.12);
 }
 
+
 /* =========================================================
    CAKE
    ========================================================= */
 
 .cake{
-  font-size:clamp(5rem,18vw,10rem);
+  font-size:
+    clamp(5rem,18vw,10rem);
 
-  filter:drop-shadow(
-    0 12px 22px rgba(90,54,67,.16)
-  );
+  filter:
+    drop-shadow(
+      0 12px 22px
+      rgba(90,54,67,.16)
+    );
 
-  animation:cake 2.5s ease-in-out infinite alternate;
+  animation:
+    cake 2.5s ease-in-out infinite alternate;
 }
 
 @keyframes cake{
+
   to{
     transform:
       translateY(-8px)
       rotate(1deg);
   }
+
 }
+
 
 /* =========================================================
    CONFETTI
@@ -609,6 +720,7 @@ button{
 
 .confetti{
   position:absolute;
+
   inset:0;
 
   pointer-events:none;
@@ -622,10 +734,12 @@ button{
   width:9px;
   height:15px;
 
-  animation:conf 4s linear forwards;
+  animation:
+    conf 4s linear forwards;
 }
 
 @keyframes conf{
+
   from{
     transform:
       translateY(-15vh)
@@ -641,20 +755,285 @@ button{
 
     opacity:.7;
   }
+
 }
+
 
 /* =========================================================
-   FINAL PHOTO
+   FINAL SCREEN
    ========================================================= */
 
-.final-photo{
-  width:min(520px,88vw);
-  height:min(60vh,680px);
+.final-screen .content{
+  width:min(1050px,100%);
+
+  /*
+     More bottom clearance than other screens.
+     This is the important fix for the signature.
+  */
+  padding-bottom:
+    calc(var(--nav-space) + 12px);
+
+  max-height:
+    calc(100vh - 15px);
 }
 
-.final-photo img{
-  object-position:center 30%;
+
+/* =========================================================
+   FANCY 8-PHOTO COLLAGE
+   ========================================================= */
+
+.photo-collage{
+  width:min(850px,92vw);
+
+  height:min(55vh,540px);
+
+  display:grid;
+
+  grid-template-columns:
+    1.05fr .75fr .95fr;
+
+  grid-template-rows:
+    1fr .82fr;
+
+  gap:10px;
+
+  margin:8px auto 14px;
+
+  flex-shrink:1;
 }
+
+
+/* Individual collage frames */
+
+.collage-item{
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:18px;
+
+  background:#eee;
+
+  box-shadow:
+    0 15px 35px rgba(87,58,72,.15);
+
+  opacity:0;
+
+  transform:
+    translateY(25px)
+    scale(.96);
+
+  transition:
+    opacity .9s ease,
+    transform 1s cubic-bezier(.2,.8,.2,1);
+
+  border:
+    4px solid rgba(255,255,255,.72);
+}
+
+
+/* When final screen becomes active */
+
+.active .collage-item{
+  opacity:1;
+  transform:none;
+}
+
+.active .collage-item:nth-child(1){
+  transition-delay:.05s;
+}
+
+.active .collage-item:nth-child(2){
+  transition-delay:.15s;
+}
+
+.active .collage-item:nth-child(3){
+  transition-delay:.25s;
+}
+
+.active .collage-item:nth-child(4){
+  transition-delay:.35s;
+}
+
+.active .collage-item:nth-child(5){
+  transition-delay:.45s;
+}
+
+.active .collage-item:nth-child(6){
+  transition-delay:.55s;
+}
+
+.active .collage-item:nth-child(7){
+  transition-delay:.65s;
+}
+
+.active .collage-item:nth-child(8){
+  transition-delay:.75s;
+}
+
+
+/* Image */
+
+.collage-item img{
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+  transition:
+    transform .8s ease;
+}
+
+.collage-item:hover img{
+  transform:scale(1.06);
+}
+
+
+/*
+   Asymmetric arrangement
+
+   1 = tall left
+   2,3 = upper middle/right
+   4,5,6 = lower area
+   7,8 = overlapping smaller memories
+*/
+
+.collage-item:nth-child(1){
+  grid-column:1;
+  grid-row:1 / span 2;
+  transform-origin:center left;
+}
+
+.collage-item:nth-child(2){
+  grid-column:2;
+  grid-row:1;
+}
+
+.collage-item:nth-child(3){
+  grid-column:3;
+  grid-row:1;
+}
+
+.collage-item:nth-child(4){
+  grid-column:2;
+  grid-row:2;
+}
+
+.collage-item:nth-child(5){
+  grid-column:3;
+  grid-row:2;
+}
+
+
+/*
+   Photos 7 and 8 are placed as elegant
+   overlapping memory cards.
+*/
+
+.collage-item:nth-child(6){
+  position:absolute;
+
+  width:150px;
+  height:105px;
+
+  right:12px;
+  bottom:18px;
+
+  z-index:5;
+
+  transform:
+    rotate(5deg)
+    translateY(25px)
+    scale(.96);
+}
+
+.collage-item:nth-child(7){
+  position:absolute;
+
+  width:145px;
+  height:100px;
+
+  right:105px;
+  bottom:5px;
+
+  z-index:6;
+
+  transform:
+    rotate(-6deg)
+    translateY(25px)
+    scale(.96);
+}
+
+.collage-item:nth-child(8){
+  position:absolute;
+
+  width:135px;
+  height:95px;
+
+  left:44%;
+  bottom:0;
+
+  z-index:7;
+
+  transform:
+    rotate(3deg)
+    translateY(25px)
+    scale(.96);
+}
+
+
+/*
+   Because items 6-8 are absolute,
+   make collage itself relative.
+*/
+
+.photo-collage{
+  position:relative;
+}
+
+
+/* =========================================================
+   FINAL MESSAGE
+   ========================================================= */
+
+.final-title{
+  font-size:
+    clamp(2.3rem,7vw,5rem);
+
+  margin:
+    3px 0 0;
+}
+
+.final-subtitle{
+  margin:
+    8px auto 4px;
+
+  font-size:
+    clamp(1.2rem,3vw,1.8rem);
+}
+
+.final-small{
+  max-width:650px;
+
+  margin:
+    3px auto 0;
+
+  line-height:1.5;
+}
+
+.final-signature{
+  margin-top:8px;
+
+  padding-bottom:14px;
+
+  font-size:
+    clamp(1.25rem,3vw,1.55rem);
+
+  line-height:1.15;
+}
+
 
 /* =========================================================
    SHORT HEIGHT SCREENS
@@ -663,7 +1042,7 @@ button{
 @media(max-height:760px){
 
   :root{
-    --nav-space:76px;
+    --nav-space:78px;
   }
 
   .screen{
@@ -671,40 +1050,75 @@ button{
   }
 
   .content{
-    max-height:calc(100vh - 24px);
-    padding-bottom:var(--nav-space);
+    max-height:
+      calc(100vh - 20px);
+
+    padding-bottom:
+      var(--nav-space);
   }
 
   .photo-wrap{
-    height:min(47vh,430px);
-    margin:8px auto;
+    height:min(45vh,410px);
+
+    margin:7px auto;
   }
 
   .photo-wrap.wide{
-    height:min(44vh,430px);
+    height:min(43vh,410px);
   }
 
   .message{
-    margin:8px auto;
-    min-height:65px;
+    margin:7px auto;
+
+    min-height:60px;
   }
 
   .subtitle{
-    margin:12px auto;
+    margin:10px auto;
   }
 
   .eyebrow{
-    margin-bottom:10px;
+    margin-bottom:9px;
   }
 
   .signature{
-    margin-top:10px;
+    margin-top:8px;
+  }
+
+
+  /* Final collage on shorter displays */
+
+  .photo-collage{
+    height:min(48vh,420px);
+
+    margin-bottom:7px;
+  }
+
+  .final-title{
+    font-size:
+      clamp(2rem,6vw,4rem);
+  }
+
+  .final-subtitle{
+    margin:5px auto;
+  }
+
+  .final-small{
+    font-size:.78rem;
+  }
+
+  .final-signature{
+    margin-top:5px;
+    padding-bottom:10px;
   }
 
   .nav{
-    bottom:max(10px,env(safe-area-inset-bottom));
+    bottom:
+      max(10px,env(safe-area-inset-bottom));
   }
+
 }
+
 
 /* =========================================================
    MOBILE
@@ -713,41 +1127,48 @@ button{
 @media(max-width:600px){
 
   :root{
-    --nav-space:82px;
+    --nav-space:84px;
   }
 
   .screen{
-    padding:20px;
+    padding:20px 16px;
   }
 
   .content{
     width:100%;
-    max-height:calc(100vh - 20px);
-    padding-bottom:var(--nav-space);
+
+    max-height:
+      calc(100vh - 18px);
+
+    padding-bottom:
+      var(--nav-space);
   }
 
   .photo-wrap{
     width:min(360px,84vw);
 
-    height:min(55vh,500px);
+    height:min(53vh,470px);
 
     border-radius:20px;
 
-    margin:8px auto;
+    margin:7px auto;
   }
 
   .photo-wrap.wide{
     width:min(92vw,760px);
-    height:min(50vh,500px);
+
+    height:min(48vh,470px);
   }
 
   .message{
-    margin:10px auto;
-    min-height:70px;
+    margin:8px auto;
+
+    min-height:65px;
   }
 
   .nav{
-    bottom:max(10px,env(safe-area-inset-bottom));
+    bottom:
+      max(9px,env(safe-area-inset-bottom));
 
     padding:7px 9px;
 
@@ -763,6 +1184,7 @@ button{
 
   .dots{
     max-width:52vw;
+
     gap:5px;
   }
 
@@ -782,9 +1204,122 @@ button{
   }
 
   .subtitle{
-    margin:14px auto;
+    margin:12px auto;
   }
+
+
+  /* =======================================================
+     MOBILE FINAL COLLAGE
+     ======================================================= */
+
+  .final-screen .content{
+    padding-bottom:
+      calc(var(--nav-space) + 8px);
+
+    max-height:
+      calc(100vh - 12px);
+  }
+
+  .photo-collage{
+    width:min(94vw,520px);
+
+    /*
+       Enough room for all eight photos while
+       leaving room for the final text.
+    */
+    height:min(43vh,360px);
+
+    gap:6px;
+
+    margin:
+      2px auto 6px;
+  }
+
+  .collage-item{
+    border-radius:13px;
+
+    border-width:3px;
+
+    box-shadow:
+      0 8px 22px rgba(87,58,72,.14);
+  }
+
+
+  /*
+     Smaller floating photos on phone
+  */
+
+  .collage-item:nth-child(6){
+    width:105px;
+    height:74px;
+
+    right:5px;
+    bottom:10px;
+  }
+
+  .collage-item:nth-child(7){
+    width:100px;
+    height:70px;
+
+    right:72px;
+    bottom:2px;
+  }
+
+  .collage-item:nth-child(8){
+    width:95px;
+    height:67px;
+
+    left:43%;
+    bottom:-2px;
+  }
+
+  .final-title{
+    font-size:
+      clamp(1.85rem,7vw,3.4rem);
+
+    line-height:.9;
+
+    margin-top:2px;
+  }
+
+  .final-subtitle{
+    font-size:
+      clamp(1.1rem,4.5vw,1.5rem);
+
+    margin:
+      6px auto 2px;
+  }
+
+  .final-small{
+    font-size:.72rem;
+
+    line-height:1.35;
+
+    max-width:90vw;
+
+    margin:
+      2px auto 0;
+  }
+
+  /*
+     IMPORTANT:
+     Signature has enough space below it so
+     the slider can NEVER overlap it.
+  */
+
+  .final-signature{
+    font-size:
+      clamp(1.15rem,4.5vw,1.4rem);
+
+    line-height:1.1;
+
+    margin-top:6px;
+
+    padding-bottom:24px;
+  }
+
 }
+
 
 /* =========================================================
    VERY SMALL PHONES
@@ -801,40 +1336,106 @@ button{
   }
 
   .content{
-    padding-bottom:var(--nav-space);
+    padding-bottom:
+      var(--nav-space);
   }
 
   .photo-wrap{
-    height:min(44vh,390px);
+    height:min(41vh,350px);
   }
 
   .photo-wrap.wide{
-    height:min(40vh,380px);
+    height:min(38vh,350px);
   }
 
   .message{
-    margin:6px auto;
-    min-height:55px;
+    margin:5px auto;
+
+    min-height:50px;
   }
 
   .type{
-    font-size:clamp(1.3rem,4.8vw,2rem);
+    font-size:
+      clamp(1.25rem,4.6vw,1.9rem);
   }
 
   .subtitle{
-    font-size:1.25rem;
-    margin:9px auto;
+    font-size:1.18rem;
+
+    margin:8px auto;
   }
 
   .eyebrow{
-    font-size:.62rem;
-    margin-bottom:8px;
+    font-size:.6rem;
+
+    margin-bottom:7px;
+  }
+
+
+  /* Final screen */
+
+  .photo-collage{
+    height:36vh;
+
+    margin-bottom:4px;
+  }
+
+  .collage-item:nth-child(6){
+    width:82px;
+    height:58px;
+
+    right:3px;
+    bottom:7px;
+  }
+
+  .collage-item:nth-child(7){
+    width:78px;
+    height:55px;
+
+    right:55px;
+    bottom:0;
+  }
+
+  .collage-item:nth-child(8){
+    width:75px;
+    height:52px;
+
+    left:43%;
+    bottom:-3px;
+  }
+
+  .final-title{
+    font-size:
+      clamp(1.65rem,6.5vw,2.8rem);
+  }
+
+  .final-subtitle{
+    font-size:1rem;
+
+    margin:4px auto 1px;
+  }
+
+  .final-small{
+    font-size:.65rem;
+
+    line-height:1.25;
+  }
+
+  .final-signature{
+    font-size:1.1rem;
+
+    margin-top:4px;
+
+    padding-bottom:22px;
   }
 
   .nav{
-    bottom:max(7px,env(safe-area-inset-bottom));
+    bottom:
+      max(6px,env(safe-area-inset-bottom));
   }
+
 }
+
 
 /* =========================================================
    LANDSCAPE MOBILE
@@ -847,55 +1448,139 @@ button{
   }
 
   .screen{
-    padding:12px 20px;
+    padding:10px 20px;
   }
 
   .content{
-    padding-bottom:var(--nav-space);
+    padding-bottom:
+      var(--nav-space);
   }
 
   .photo-wrap{
-    height:55vh;
-    width:min(300px,35vw);
+    height:52vh;
+
+    width:min(290px,34vw);
   }
 
   .photo-wrap.wide{
     width:min(650px,80vw);
-    height:48vh;
+
+    height:45vh;
   }
 
   .message{
-    margin:5px auto;
-    min-height:45px;
+    margin:4px auto;
+
+    min-height:40px;
   }
 
   .type{
-    font-size:1.35rem;
+    font-size:1.3rem;
   }
 
   .subtitle{
-    margin:7px auto;
-    font-size:1.2rem;
+    margin:5px auto;
+
+    font-size:1.15rem;
   }
 
   .nav{
-    bottom:6px;
+    bottom:5px;
   }
+
+
+  /* Landscape final collage */
+
+  .photo-collage{
+    width:min(720px,82vw);
+
+    height:62vh;
+
+    margin-bottom:4px;
+  }
+
+  .final-title{
+    font-size:2.2rem;
+  }
+
+  .final-small{
+    font-size:.7rem;
+  }
+
+  .final-signature{
+    font-size:1.1rem;
+
+    padding-bottom:10px;
+  }
+
 }
+
+
+/* =========================================================
+   EXTRA SMALL WIDTH
+   ========================================================= */
+
+@media(max-width:380px){
+
+  .photo-collage{
+    width:95vw;
+  }
+
+  .collage-item:nth-child(6){
+    width:76px;
+    height:54px;
+  }
+
+  .collage-item:nth-child(7){
+    width:72px;
+    height:50px;
+
+    right:50px;
+  }
+
+  .collage-item:nth-child(8){
+    width:68px;
+    height:48px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
+
 <!-- =======================================================
-     PASSWORD / OPENING SCREEN
+     PASSWORD SCREEN
      ======================================================= -->
 
 <div id="unlock" class="screen active">
 
   <div class="bg"></div>
 
-  <div class="particles" id="p0"></div>
+  <div
+    class="particles"
+    id="p0"
+  ></div>
 
   <div class="lock-card">
 
@@ -919,7 +1604,10 @@ button{
       autocomplete="off"
     >
 
-    <button class="open-btn" id="openBtn">
+    <button
+      class="open-btn"
+      id="openBtn"
+    >
       OPEN YOUR SURPRISE ✨
     </button>
 
@@ -928,6 +1616,7 @@ button{
     </div>
 
   </div>
+
 </div>
 
 
@@ -935,13 +1624,23 @@ button{
      MAIN CARD
      ======================================================= -->
 
-<main id="card" style="display:none">
+<main
+  id="card"
+  style="display:none"
+>
 
-  <!-- STEP 0 -->
 
-  <section class="screen" data-step="0">
+  <!-- =====================================================
+       STEP 0
+       ===================================================== -->
+
+  <section
+    class="screen"
+    data-step="0"
+  >
 
     <div class="bg"></div>
+
     <div class="particles"></div>
 
     <div class="content">
@@ -963,17 +1662,28 @@ button{
   </section>
 
 
-  <!-- STEP 1 -->
+  <!-- =====================================================
+       STEP 1
+       ===================================================== -->
 
-  <section class="screen" data-step="1">
+  <section
+    class="screen"
+    data-step="1"
+  >
 
     <div class="bg"></div>
+
     <div class="particles"></div>
 
     <div class="content">
 
       <div class="photo-wrap">
-        <img src="images/photo6.jpg" alt="Rekha">
+
+        <img
+          src="images/photo6.jpg"
+          alt="Rekha"
+        >
+
       </div>
 
       <div
@@ -986,17 +1696,28 @@ button{
   </section>
 
 
-  <!-- STEP 2 -->
+  <!-- =====================================================
+       STEP 2
+       ===================================================== -->
 
-  <section class="screen" data-step="2">
+  <section
+    class="screen"
+    data-step="2"
+  >
 
     <div class="bg"></div>
+
     <div class="particles"></div>
 
     <div class="content">
 
       <div class="photo-wrap">
-        <img src="images/photo3.jpg" alt="Rekha">
+
+        <img
+          src="images/photo3.jpg"
+          alt="Rekha"
+        >
+
       </div>
 
       <div
@@ -1009,17 +1730,28 @@ button{
   </section>
 
 
-  <!-- STEP 3 -->
+  <!-- =====================================================
+       STEP 3
+       ===================================================== -->
 
-  <section class="screen" data-step="3">
+  <section
+    class="screen"
+    data-step="3"
+  >
 
     <div class="bg"></div>
+
     <div class="particles"></div>
 
     <div class="content">
 
       <div class="photo-wrap">
-        <img src="images/photo4.jpg" alt="Rekha">
+
+        <img
+          src="images/photo4.jpg"
+          alt="Rekha"
+        >
+
       </div>
 
       <div
@@ -1032,11 +1764,17 @@ button{
   </section>
 
 
-  <!-- STEP 4 -->
+  <!-- =====================================================
+       STEP 4
+       ===================================================== -->
 
-  <section class="screen" data-step="4">
+  <section
+    class="screen"
+    data-step="4"
+  >
 
     <div class="bg"></div>
+
     <div class="particles"></div>
 
     <div class="content">
@@ -1066,20 +1804,28 @@ button{
   </section>
 
 
-  <!-- STEP 5 -->
+  <!-- =====================================================
+       STEP 5
+       ===================================================== -->
 
-  <section class="screen" data-step="5">
+  <section
+    class="screen"
+    data-step="5"
+  >
 
     <div class="bg"></div>
+
     <div class="particles"></div>
 
     <div class="content">
 
       <div class="photo-wrap wide">
+
         <img
           src="images/photo1.jpg"
           alt="Rekha working in the lab"
         >
+
       </div>
 
       <div
@@ -1092,17 +1838,28 @@ button{
   </section>
 
 
-  <!-- STEP 6 -->
+  <!-- =====================================================
+       STEP 6
+       ===================================================== -->
 
-  <section class="screen" data-step="6">
+  <section
+    class="screen"
+    data-step="6"
+  >
 
     <div class="bg"></div>
+
     <div class="particles"></div>
 
     <div class="content">
 
       <div class="photo-wrap">
-        <img src="images/photo2.jpg" alt="Rekha">
+
+        <img
+          src="images/photo2.jpg"
+          alt="Rekha"
+        >
+
       </div>
 
       <div
@@ -1115,17 +1872,28 @@ button{
   </section>
 
 
-  <!-- STEP 7 -->
+  <!-- =====================================================
+       STEP 7
+       ===================================================== -->
 
-  <section class="screen" data-step="7">
+  <section
+    class="screen"
+    data-step="7"
+  >
 
     <div class="bg"></div>
+
     <div class="particles"></div>
 
     <div class="content">
 
       <div class="photo-wrap">
-        <img src="images/photo6.jpg" alt="Rekha">
+
+        <img
+          src="images/photo6.jpg"
+          alt="Rekha"
+        >
+
       </div>
 
       <div
@@ -1138,11 +1906,17 @@ button{
   </section>
 
 
-  <!-- STEP 8 -->
+  <!-- =====================================================
+       STEP 8
+       ===================================================== -->
 
-  <section class="screen" data-step="8">
+  <section
+    class="screen"
+    data-step="8"
+  >
 
     <div class="bg"></div>
+
     <div class="particles"></div>
 
     <div class="content">
@@ -1168,17 +1942,28 @@ button{
   </section>
 
 
-  <!-- STEP 9 -->
+  <!-- =====================================================
+       STEP 9
+       ===================================================== -->
 
-  <section class="screen" data-step="9">
+  <section
+    class="screen"
+    data-step="9"
+  >
 
     <div class="bg dark"></div>
+
     <div class="particles"></div>
 
     <div class="content">
 
       <div class="photo-wrap">
-        <img src="images/photo5.jpg" alt="Rekha">
+
+        <img
+          src="images/photo5.jpg"
+          alt="Rekha"
+        >
+
       </div>
 
       <div class="quote">
@@ -1202,11 +1987,17 @@ button{
   </section>
 
 
-  <!-- STEP 10 -->
+  <!-- =====================================================
+       STEP 10
+       ===================================================== -->
 
-  <section class="screen" data-step="10">
+  <section
+    class="screen"
+    data-step="10"
+  >
 
     <div class="bg"></div>
+
     <div class="particles"></div>
 
     <div class="content">
@@ -1237,47 +2028,146 @@ button{
 
     </div>
 
-    <div class="confetti" id="confetti"></div>
+    <div
+      class="confetti"
+      id="confetti"
+    ></div>
 
   </section>
 
 
-  <!-- STEP 11 -->
+  <!-- =====================================================
+       STEP 11 — FINAL 8 PHOTO COLLAGE
+       ===================================================== -->
 
-  <section class="screen" data-step="11">
+  <section
+    class="screen final-screen"
+    data-step="11"
+  >
 
     <div class="bg"></div>
+
     <div class="particles"></div>
 
     <div class="content">
 
-      <div class="photo-wrap final-photo">
 
-        <img
-          src="images/photo5.jpg"
-          alt="Rekha"
-        >
+      <!-- =================================================
+           8 PHOTO COLLAGE
+
+           photo1.jpg
+           photo2.jpg
+           photo3.jpg
+           photo4.jpg
+           photo5.jpg
+           photo6.jpg
+           photo7.jpg
+           photo8.jpg
+           ================================================= -->
+
+      <div class="photo-collage">
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo1.jpg"
+            alt="Rekha memory 1"
+          >
+
+        </div>
+
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo2.jpg"
+            alt="Rekha memory 2"
+          >
+
+        </div>
+
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo3.jpg"
+            alt="Rekha memory 3"
+          >
+
+        </div>
+
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo4.jpg"
+            alt="Rekha memory 4"
+          >
+
+        </div>
+
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo5.jpg"
+            alt="Rekha memory 5"
+          >
+
+        </div>
+
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo6.jpg"
+            alt="Rekha memory 6"
+          >
+
+        </div>
+
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo7.jpg"
+            alt="Rekha memory 7"
+          >
+
+        </div>
+
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo8.jpg"
+            alt="Rekha memory 8"
+          >
+
+        </div>
 
       </div>
 
-      <h1
-        class="title"
-        style="font-size:clamp(2.8rem,9vw,5.8rem)"
-      >
+
+      <!-- =================================================
+           FINAL MESSAGE
+           ================================================= -->
+
+      <h1 class="title final-title">
         BIRTHMONTH HOTA HAI!!!! ❤️
       </h1>
 
-      <p class="subtitle">
+      <p class="subtitle final-subtitle">
         Happy Happy Birthmonth, Rekha ✨
       </p>
 
-      <p class="small">
+      <p class="small final-small">
         May this year bring you more happiness,
         more success, more beautiful moments,
         and many more reasons to smile.
       </p>
 
-      <div class="signature">
+      <div class="signature final-signature">
         With warmth & gratitude,<br>
         Sahil ❤️
       </div>
@@ -1287,11 +2177,17 @@ button{
   </section>
 
 
-  <!-- STEP 12 -->
+  <!-- =====================================================
+       STEP 12 — PLACEHOLDER FOR FUTURE
+       ===================================================== -->
 
-  <section class="screen" data-step="12">
+  <section
+    class="screen"
+    data-step="12"
+  >
 
     <div class="bg"></div>
+
     <div class="particles"></div>
 
     <div class="content">
@@ -1314,6 +2210,7 @@ button{
     </div>
 
   </section>
+
 
 </main>
 
@@ -1344,7 +2241,7 @@ button{
 
 
 <!-- =======================================================
-     BOTTOM SLIDER / NAVIGATION
+     BOTTOM NAVIGATION
      ======================================================= -->
 
 <div
@@ -1424,9 +2321,11 @@ function makeParticles(root){
   }
 }
 
+
 document
   .querySelectorAll('.particles')
   .forEach(makeParticles);
+
 
 makeParticles(
   document.getElementById('p0')
@@ -1464,6 +2363,7 @@ function typeText(el){
       );
 
     }
+
   };
 
   tick();
@@ -1481,9 +2381,10 @@ function show(i){
       0,
       Math.min(
         i,
-        screens.length-1
+        screens.length - 1
       )
     );
+
 
   screens.forEach(
     (s,k) => {
@@ -1520,14 +2421,16 @@ function show(i){
     .forEach(typeText);
 
 
-  if(current === 10)
+  if(current === 10){
     spawnConfetti();
+  }
 
 
   /*
-     Scroll position is reset whenever
-     a new screen is shown.
+     Ensure the browser never keeps
+     an old scroll position.
   */
+
   window.scrollTo(
     0,
     0
@@ -1551,6 +2454,7 @@ function spawnConfetti(){
 
   c.dataset.done = '1';
 
+
   for(let i=0;i<90;i++){
 
     const e =
@@ -1572,7 +2476,9 @@ function spawnConfetti(){
       `hsl(${Math.random()*360},55%,72%)`;
 
     c.appendChild(e);
+
   }
+
 }
 
 
@@ -1585,6 +2491,7 @@ function startCard(){
   unlock.classList.remove(
     'active'
   );
+
 
   setTimeout(
     () => {
@@ -1609,6 +2516,7 @@ function startCard(){
 
   audio.volume = .34;
 
+
   audio
     .play()
     .then(
@@ -1623,6 +2531,7 @@ function startCard(){
     .catch(
       () => {}
     );
+
 }
 
 
@@ -1656,6 +2565,7 @@ document
             'password'
           );
 
+
         input.animate(
           [
             {
@@ -1675,6 +2585,7 @@ document
             duration:260
           }
         );
+
 
         input.placeholder =
           'Try her first name ❤️';
@@ -1716,6 +2627,7 @@ document
   .onclick =
     () => show(current + 1);
 
+
 document
   .getElementById('prev')
   .onclick =
@@ -1756,6 +2668,7 @@ musicBtn.onclick = () => {
 
 let sx = null;
 
+
 document.addEventListener(
   'touchstart',
   e => {
@@ -1778,9 +2691,11 @@ document.addEventListener(
     if(sx === null)
       return;
 
+
     const dx =
       e.changedTouches[0]
        .clientX - sx;
+
 
     if(Math.abs(dx) > 55){
 
@@ -1790,6 +2705,7 @@ document.addEventListener(
       );
 
     }
+
 
     sx = null;
 
