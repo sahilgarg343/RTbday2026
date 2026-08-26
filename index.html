@@ -8,6 +8,7 @@
 <title>For Rekha — Happy Happy Birthmonth ❤️</title>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
 
 :root{
@@ -19,6 +20,10 @@
   --gold:#c69b62;
   --shadow:0 24px 70px rgba(87,58,72,.16);
 
+  /*
+     Reserved space at the bottom so the
+     navigation bar NEVER overlaps content.
+  */
   --nav-space:92px;
 }
 
@@ -45,7 +50,7 @@ button{
 
 
 /* =========================================================
-   SCREENS
+   SCREEN
    ========================================================= */
 
 .screen{
@@ -78,7 +83,7 @@ button{
 
 
 /* =========================================================
-   BACKGROUNDS
+   BACKGROUND
    ========================================================= */
 
 .bg{
@@ -145,7 +150,7 @@ button{
   width:min(920px,100%);
 
   max-height:
-    calc(100vh - 30px);
+    calc(100vh - 20px);
 
   text-align:center;
 
@@ -229,7 +234,7 @@ button{
 
 
 /* =========================================================
-   PHOTOS
+   STANDARD PHOTOS
    ========================================================= */
 
 .photo-wrap{
@@ -296,7 +301,7 @@ button{
 
 
 /* =========================================================
-   MESSAGES
+   MESSAGE
    ========================================================= */
 
 .message{
@@ -317,11 +322,6 @@ button{
   font-family:'Cormorant Garamond',serif;
   font-size:1.5rem;
   margin-top:18px;
-
-  /*
-     Extra bottom protection specifically
-     for the signature area.
-  */
   padding-bottom:8px;
 }
 
@@ -397,7 +397,7 @@ button{
   border-radius:999px;
 
   background:
-    rgba(255,255,255,.84);
+    rgba(255,255,255,.86);
 
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
@@ -760,52 +760,86 @@ button{
 
 
 /* =========================================================
-   FINAL SCREEN
+   FINAL COLLAGE SCREEN
    ========================================================= */
 
 .final-screen .content{
-  width:min(1050px,100%);
 
-  /*
-     More bottom clearance than other screens.
-     This is the important fix for the signature.
-  */
+  width:min(1180px,100%);
+
   padding-bottom:
-    calc(var(--nav-space) + 12px);
+    calc(var(--nav-space) + 4px);
 
   max-height:
-    calc(100vh - 15px);
+    calc(100vh - 10px);
+
 }
 
 
 /* =========================================================
-   FANCY 8-PHOTO COLLAGE
+   COLLAGE HEADER
+   ========================================================= */
+
+.collage-heading{
+  margin-bottom:10px;
+  flex-shrink:0;
+}
+
+.collage-heading .eyebrow{
+  margin-bottom:4px;
+}
+
+.collage-heading .title{
+  font-size:
+    clamp(2.1rem,5vw,4.2rem);
+
+  line-height:.9;
+}
+
+
+/* =========================================================
+   15 PHOTO COLLAGE
+
+   Deliberately NOT overlapping.
+
+   Large desktop:
+   5 columns x 3 rows
+
+   Each photo has breathing room and
+   a slight individual rotation.
    ========================================================= */
 
 .photo-collage{
-  width:min(850px,92vw);
 
-  height:min(55vh,540px);
+  width:min(1080px,94vw);
+
+  height:min(54vh,500px);
 
   display:grid;
 
   grid-template-columns:
-    1.05fr .75fr .95fr;
+    repeat(5,1fr);
 
   grid-template-rows:
-    1fr .82fr;
+    repeat(3,1fr);
 
-  gap:10px;
+  gap:12px;
 
-  margin:8px auto 14px;
+  margin:5px auto 12px;
 
   flex-shrink:1;
+
+  position:relative;
+
 }
 
 
-/* Individual collage frames */
+/* =========================================================
+   COLLAGE ITEMS
+   ========================================================= */
 
 .collage-item{
+
   position:relative;
 
   overflow:hidden;
@@ -814,25 +848,30 @@ button{
 
   background:#eee;
 
+  border:
+    5px solid rgba(255,255,255,.86);
+
   box-shadow:
-    0 15px 35px rgba(87,58,72,.15);
+    0 12px 28px rgba(87,58,72,.15);
 
   opacity:0;
 
   transform:
     translateY(25px)
-    scale(.96);
+    scale(.94);
 
   transition:
-    opacity .9s ease,
+    opacity .75s ease,
     transform 1s cubic-bezier(.2,.8,.2,1);
 
-  border:
-    4px solid rgba(255,255,255,.72);
+  min-width:0;
+  min-height:0;
 }
 
 
-/* When final screen becomes active */
+/* =========================================================
+   COLLAGE ANIMATION
+   ========================================================= */
 
 .active .collage-item{
   opacity:1;
@@ -840,41 +879,72 @@ button{
 }
 
 .active .collage-item:nth-child(1){
-  transition-delay:.05s;
+  transition-delay:.03s;
 }
 
 .active .collage-item:nth-child(2){
-  transition-delay:.15s;
+  transition-delay:.10s;
 }
 
 .active .collage-item:nth-child(3){
-  transition-delay:.25s;
+  transition-delay:.17s;
 }
 
 .active .collage-item:nth-child(4){
-  transition-delay:.35s;
+  transition-delay:.24s;
 }
 
 .active .collage-item:nth-child(5){
-  transition-delay:.45s;
+  transition-delay:.31s;
 }
 
 .active .collage-item:nth-child(6){
-  transition-delay:.55s;
+  transition-delay:.38s;
 }
 
 .active .collage-item:nth-child(7){
-  transition-delay:.65s;
+  transition-delay:.45s;
 }
 
 .active .collage-item:nth-child(8){
-  transition-delay:.75s;
+  transition-delay:.52s;
+}
+
+.active .collage-item:nth-child(9){
+  transition-delay:.59s;
+}
+
+.active .collage-item:nth-child(10){
+  transition-delay:.66s;
+}
+
+.active .collage-item:nth-child(11){
+  transition-delay:.73s;
+}
+
+.active .collage-item:nth-child(12){
+  transition-delay:.80s;
+}
+
+.active .collage-item:nth-child(13){
+  transition-delay:.87s;
+}
+
+.active .collage-item:nth-child(14){
+  transition-delay:.94s;
+}
+
+.active .collage-item:nth-child(15){
+  transition-delay:1.01s;
 }
 
 
-/* Image */
+/* =========================================================
+   COLLAGE IMAGES
+   ========================================================= */
 
 .collage-item img{
+
   width:100%;
   height:100%;
 
@@ -887,156 +957,183 @@ button{
 }
 
 .collage-item:hover img{
-  transform:scale(1.06);
+  transform:scale(1.07);
 }
 
 
-/*
-   Asymmetric arrangement
+/* =========================================================
+   SUBTLE INDIVIDUAL ANGLES
 
-   1 = tall left
-   2,3 = upper middle/right
-   4,5,6 = lower area
-   7,8 = overlapping smaller memories
-*/
+   These are intentionally tiny so it feels
+   handmade/fancy without becoming messy.
+   ========================================================= */
 
 .collage-item:nth-child(1){
-  grid-column:1;
-  grid-row:1 / span 2;
-  transform-origin:center left;
+  transform:
+    translateY(25px)
+    scale(.94)
+    rotate(-1.5deg);
 }
 
 .collage-item:nth-child(2){
-  grid-column:2;
-  grid-row:1;
+  transform:
+    translateY(25px)
+    scale(.94)
+    rotate(.8deg);
 }
 
 .collage-item:nth-child(3){
-  grid-column:3;
-  grid-row:1;
+  transform:
+    translateY(25px)
+    scale(.94)
+    rotate(-.7deg);
 }
 
 .collage-item:nth-child(4){
-  grid-column:2;
-  grid-row:2;
+  transform:
+    translateY(25px)
+    scale(.94)
+    rotate(1.2deg);
 }
 
 .collage-item:nth-child(5){
-  grid-column:3;
-  grid-row:2;
+  transform:
+    translateY(25px)
+    scale(.94)
+    rotate(-1deg);
 }
 
-
-/*
-   Photos 7 and 8 are placed as elegant
-   overlapping memory cards.
-*/
-
 .collage-item:nth-child(6){
-  position:absolute;
-
-  width:150px;
-  height:105px;
-
-  right:12px;
-  bottom:18px;
-
-  z-index:5;
-
   transform:
-    rotate(5deg)
     translateY(25px)
-    scale(.96);
+    scale(.94)
+    rotate(.8deg);
 }
 
 .collage-item:nth-child(7){
-  position:absolute;
-
-  width:145px;
-  height:100px;
-
-  right:105px;
-  bottom:5px;
-
-  z-index:6;
-
   transform:
-    rotate(-6deg)
     translateY(25px)
-    scale(.96);
+    scale(.94)
+    rotate(-1deg);
 }
 
 .collage-item:nth-child(8){
-  position:absolute;
-
-  width:135px;
-  height:95px;
-
-  left:44%;
-  bottom:0;
-
-  z-index:7;
-
   transform:
-    rotate(3deg)
     translateY(25px)
-    scale(.96);
+    scale(.94)
+    rotate(.6deg);
 }
 
+.collage-item:nth-child(9){
+  transform:
+    translateY(25px)
+    scale(.94)
+    rotate(-.8deg);
+}
 
-/*
-   Because items 6-8 are absolute,
-   make collage itself relative.
-*/
+.collage-item:nth-child(10){
+  transform:
+    translateY(25px)
+    scale(.94)
+    rotate(1deg);
+}
 
-.photo-collage{
-  position:relative;
+.collage-item:nth-child(11){
+  transform:
+    translateY(25px)
+    scale(.94)
+    rotate(-1.2deg);
+}
+
+.collage-item:nth-child(12){
+  transform:
+    translateY(25px)
+    scale(.94)
+    rotate(.7deg);
+}
+
+.collage-item:nth-child(13){
+  transform:
+    translateY(25px)
+    scale(.94)
+    rotate(-.6deg);
+}
+
+.collage-item:nth-child(14){
+  transform:
+    translateY(25px)
+    scale(.94)
+    rotate(1deg);
+}
+
+.collage-item:nth-child(15){
+  transform:
+    translateY(25px)
+    scale(.94)
+    rotate(-.8deg);
 }
 
 
 /* =========================================================
-   FINAL MESSAGE
+   FINAL BIRTHMONTH MESSAGE
    ========================================================= */
 
 .final-title{
+
   font-size:
-    clamp(2.3rem,7vw,5rem);
+    clamp(2rem,5.5vw,4.6rem);
+
+  line-height:.85;
 
   margin:
-    3px 0 0;
+    0;
+
+  flex-shrink:0;
 }
 
 .final-subtitle{
+
   margin:
-    8px auto 4px;
+    6px auto 2px;
 
   font-size:
-    clamp(1.2rem,3vw,1.8rem);
+    clamp(1.15rem,3vw,1.7rem);
+
+  flex-shrink:0;
 }
 
 .final-small{
-  max-width:650px;
+
+  max-width:700px;
 
   margin:
-    3px auto 0;
+    2px auto 0;
 
-  line-height:1.5;
+  line-height:1.45;
+
+  flex-shrink:0;
 }
 
 .final-signature{
-  margin-top:8px;
 
-  padding-bottom:14px;
+  margin-top:7px;
+
+  padding-bottom:18px;
+
+  font-family:
+    'Cormorant Garamond',serif;
 
   font-size:
-    clamp(1.25rem,3vw,1.55rem);
+    clamp(1.2rem,3vw,1.55rem);
 
-  line-height:1.15;
+  line-height:1.1;
+
+  flex-shrink:0;
 }
 
 
 /* =========================================================
-   SHORT HEIGHT SCREENS
+   SHORT HEIGHT
    ========================================================= */
 
 @media(max-height:760px){
@@ -1051,7 +1148,7 @@ button{
 
   .content{
     max-height:
-      calc(100vh - 20px);
+      calc(100vh - 15px);
 
     padding-bottom:
       var(--nav-space);
@@ -1086,21 +1183,32 @@ button{
   }
 
 
-  /* Final collage on shorter displays */
+  /* Final collage */
+
+  .collage-heading{
+    margin-bottom:5px;
+  }
 
   .photo-collage{
-    height:min(48vh,420px);
+    height:min(50vh,410px);
+
+    gap:8px;
 
     margin-bottom:7px;
   }
 
+  .collage-item{
+    border-width:4px;
+    border-radius:14px;
+  }
+
   .final-title{
     font-size:
-      clamp(2rem,6vw,4rem);
+      clamp(1.9rem,5vw,3.8rem);
   }
 
   .final-subtitle{
-    margin:5px auto;
+    margin:4px auto;
   }
 
   .final-small{
@@ -1108,13 +1216,8 @@ button{
   }
 
   .final-signature{
-    margin-top:5px;
-    padding-bottom:10px;
-  }
-
-  .nav{
-    bottom:
-      max(10px,env(safe-area-inset-bottom));
+    margin-top:4px;
+    padding-bottom:12px;
   }
 
 }
@@ -1138,7 +1241,7 @@ button{
     width:100%;
 
     max-height:
-      calc(100vh - 18px);
+      calc(100vh - 14px);
 
     padding-bottom:
       var(--nav-space);
@@ -1188,12 +1291,6 @@ button{
     gap:5px;
   }
 
-  .dot{
-    width:5px;
-    height:5px;
-    flex-basis:5px;
-  }
-
   .music{
     top:12px;
     right:12px;
@@ -1209,113 +1306,103 @@ button{
 
 
   /* =======================================================
-     MOBILE FINAL COLLAGE
+     MOBILE COLLAGE
+
+     15 photos arranged in 3 columns x 5 rows.
+     This is MUCH cleaner than overlapping cards.
      ======================================================= */
 
   .final-screen .content{
+
     padding-bottom:
-      calc(var(--nav-space) + 8px);
+      calc(var(--nav-space) + 10px);
 
     max-height:
-      calc(100vh - 12px);
+      calc(100vh - 10px);
+  }
+
+  .collage-heading{
+    margin-bottom:5px;
+  }
+
+  .collage-heading .eyebrow{
+    font-size:.58rem;
+    margin-bottom:2px;
+  }
+
+  .collage-heading .title{
+    font-size:
+      clamp(1.8rem,7vw,2.8rem);
   }
 
   .photo-collage{
-    width:min(94vw,520px);
 
-    /*
-       Enough room for all eight photos while
-       leaving room for the final text.
-    */
-    height:min(43vh,360px);
+    width:min(94vw,500px);
+
+    height:min(46vh,410px);
+
+    grid-template-columns:
+      repeat(3,1fr);
+
+    grid-template-rows:
+      repeat(5,1fr);
 
     gap:6px;
 
     margin:
-      2px auto 6px;
+      2px auto 7px;
   }
 
   .collage-item{
-    border-radius:13px;
 
     border-width:3px;
 
+    border-radius:11px;
+
     box-shadow:
-      0 8px 22px rgba(87,58,72,.14);
-  }
-
-
-  /*
-     Smaller floating photos on phone
-  */
-
-  .collage-item:nth-child(6){
-    width:105px;
-    height:74px;
-
-    right:5px;
-    bottom:10px;
-  }
-
-  .collage-item:nth-child(7){
-    width:100px;
-    height:70px;
-
-    right:72px;
-    bottom:2px;
-  }
-
-  .collage-item:nth-child(8){
-    width:95px;
-    height:67px;
-
-    left:43%;
-    bottom:-2px;
+      0 7px 18px rgba(87,58,72,.13);
   }
 
   .final-title{
+
     font-size:
-      clamp(1.85rem,7vw,3.4rem);
+      clamp(1.7rem,7vw,3rem);
 
-    line-height:.9;
+    line-height:.86;
 
-    margin-top:2px;
+    margin-top:0;
   }
 
   .final-subtitle{
+
     font-size:
-      clamp(1.1rem,4.5vw,1.5rem);
+      clamp(1rem,4.5vw,1.4rem);
 
     margin:
-      6px auto 2px;
+      5px auto 2px;
   }
 
   .final-small{
-    font-size:.72rem;
 
-    line-height:1.35;
+    font-size:.68rem;
+
+    line-height:1.3;
 
     max-width:90vw;
 
-    margin:
-      2px auto 0;
+    margin:2px auto 0;
   }
 
-  /*
-     IMPORTANT:
-     Signature has enough space below it so
-     the slider can NEVER overlap it.
-  */
-
   .final-signature{
+
     font-size:
-      clamp(1.15rem,4.5vw,1.4rem);
+      clamp(1.1rem,4.5vw,1.35rem);
 
-    line-height:1.1;
+    line-height:1.05;
 
-    margin-top:6px;
+    margin-top:5px;
 
-    padding-bottom:24px;
+    padding-bottom:25px;
   }
 
 }
@@ -1372,61 +1459,52 @@ button{
   }
 
 
-  /* Final screen */
+  /* Final collage */
 
   .photo-collage{
-    height:36vh;
+
+    height:39vh;
+
+    gap:4px;
 
     margin-bottom:4px;
   }
 
-  .collage-item:nth-child(6){
-    width:82px;
-    height:58px;
+  .collage-item{
 
-    right:3px;
-    bottom:7px;
+    border-width:2px;
+
+    border-radius:8px;
   }
 
-  .collage-item:nth-child(7){
-    width:78px;
-    height:55px;
-
-    right:55px;
-    bottom:0;
-  }
-
-  .collage-item:nth-child(8){
-    width:75px;
-    height:52px;
-
-    left:43%;
-    bottom:-3px;
+  .collage-heading .title{
+    font-size:
+      clamp(1.6rem,6.5vw,2.5rem);
   }
 
   .final-title{
     font-size:
-      clamp(1.65rem,6.5vw,2.8rem);
+      clamp(1.55rem,6.5vw,2.7rem);
   }
 
   .final-subtitle{
-    font-size:1rem;
+    font-size:.95rem;
 
-    margin:4px auto 1px;
+    margin:3px auto 1px;
   }
 
   .final-small{
-    font-size:.65rem;
+    font-size:.61rem;
 
-    line-height:1.25;
+    line-height:1.2;
   }
 
   .final-signature{
-    font-size:1.1rem;
+    font-size:1.05rem;
 
-    margin-top:4px;
+    margin-top:3px;
 
-    padding-bottom:22px;
+    padding-bottom:20px;
   }
 
   .nav{
@@ -1489,28 +1567,44 @@ button{
   }
 
 
-  /* Landscape final collage */
+  /* Landscape collage */
+
+  .collage-heading{
+    margin-bottom:2px;
+  }
+
+  .collage-heading .title{
+    font-size:2.1rem;
+  }
 
   .photo-collage{
-    width:min(720px,82vw);
 
-    height:62vh;
+    width:min(800px,88vw);
 
-    margin-bottom:4px;
+    height:58vh;
+
+    gap:5px;
+
+    margin-bottom:3px;
+  }
+
+  .collage-item{
+    border-width:3px;
+    border-radius:10px;
   }
 
   .final-title{
-    font-size:2.2rem;
+    font-size:2rem;
   }
 
   .final-small{
-    font-size:.7rem;
+    font-size:.65rem;
   }
 
   .final-signature{
-    font-size:1.1rem;
+    font-size:1rem;
 
-    padding-bottom:10px;
+    padding-bottom:8px;
   }
 
 }
@@ -1524,23 +1618,13 @@ button{
 
   .photo-collage{
     width:95vw;
+
+    gap:3px;
   }
 
-  .collage-item:nth-child(6){
-    width:76px;
-    height:54px;
-  }
-
-  .collage-item:nth-child(7){
-    width:72px;
-    height:50px;
-
-    right:50px;
-  }
-
-  .collage-item:nth-child(8){
-    width:68px;
-    height:48px;
+  .collage-item{
+    border-width:2px;
+    border-radius:7px;
   }
 
 }
@@ -1631,7 +1715,7 @@ button{
 
 
   <!-- =====================================================
-       STEP 0
+       SCREEN 1 — STEP 0
        ===================================================== -->
 
   <section
@@ -1663,7 +1747,7 @@ button{
 
 
   <!-- =====================================================
-       STEP 1
+       SCREEN 2 — STEP 1
        ===================================================== -->
 
   <section
@@ -1697,7 +1781,7 @@ button{
 
 
   <!-- =====================================================
-       STEP 2
+       SCREEN 3 — STEP 2
        ===================================================== -->
 
   <section
@@ -1731,7 +1815,7 @@ button{
 
 
   <!-- =====================================================
-       STEP 3
+       SCREEN 4 — STEP 3
        ===================================================== -->
 
   <section
@@ -1765,7 +1849,7 @@ button{
 
 
   <!-- =====================================================
-       STEP 4
+       SCREEN 5 — STEP 4
        ===================================================== -->
 
   <section
@@ -1805,7 +1889,7 @@ button{
 
 
   <!-- =====================================================
-       STEP 5
+       SCREEN 6 — STEP 5
        ===================================================== -->
 
   <section
@@ -1839,7 +1923,7 @@ button{
 
 
   <!-- =====================================================
-       STEP 6
+       SCREEN 7 — STEP 6
        ===================================================== -->
 
   <section
@@ -1873,7 +1957,7 @@ button{
 
 
   <!-- =====================================================
-       STEP 7
+       SCREEN 8 — STEP 7
        ===================================================== -->
 
   <section
@@ -1907,7 +1991,7 @@ button{
 
 
   <!-- =====================================================
-       STEP 8
+       SCREEN 9 — STEP 8
        ===================================================== -->
 
   <section
@@ -1943,7 +2027,7 @@ button{
 
 
   <!-- =====================================================
-       STEP 9
+       SCREEN 10 — STEP 9
        ===================================================== -->
 
   <section
@@ -1988,7 +2072,7 @@ button{
 
 
   <!-- =====================================================
-       STEP 10
+       SCREEN 11 — STEP 10
        ===================================================== -->
 
   <section
@@ -2037,12 +2121,90 @@ button{
 
 
   <!-- =====================================================
-       STEP 11 — FINAL 8 PHOTO COLLAGE
+       SCREEN 12 — STEP 11
+       ORIGINAL FINAL MESSAGE
+
+       This is now the screen immediately before
+       the big 15-photo memory collage.
+       ===================================================== -->
+
+  <section
+    class="screen"
+    data-step="11"
+  >
+
+    <div class="bg"></div>
+
+    <div class="particles"></div>
+
+    <div class="content">
+
+      <div class="photo-wrap">
+
+        <img
+          src="images/photo5.jpg"
+          alt="Rekha"
+        >
+
+      </div>
+
+      <h1
+        class="title"
+        style="
+          font-size:clamp(2.8rem,9vw,5.8rem);
+        "
+      >
+        BIRTHMONTH HOTA HAI!!!! ❤️
+      </h1>
+
+      <p class="subtitle">
+        Happy Happy Birthmonth, Rekha ✨
+      </p>
+
+      <p class="small">
+        May this year bring you more happiness,
+        more success, more beautiful moments,
+        and many more reasons to smile.
+      </p>
+
+      <div class="signature">
+        With warmth & gratitude,<br>
+        Sahil ❤️
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       SCREEN 13 — STEP 12
+       FINAL 15-PHOTO MEMORY COLLAGE
+
+       Files required:
+
+       photo1.jpg
+       photo2.jpg
+       photo3.jpg
+       photo4.jpg
+       photo5.jpg
+       photo6.jpg
+       photo7.jpg
+       photo8.jpg
+       photo9.jpg
+       photo10.jpg
+       photo11.jpg
+       photo12.jpg
+       photo13.jpg
+       photo14.jpg
+       photo15.jpg
+
+       All 15 photos are displayed.
        ===================================================== -->
 
   <section
     class="screen final-screen"
-    data-step="11"
+    data-step="12"
   >
 
     <div class="bg"></div>
@@ -2053,19 +2215,30 @@ button{
 
 
       <!-- =================================================
-           8 PHOTO COLLAGE
+           COLLAGE HEADER
+           ================================================= -->
 
-           photo1.jpg
-           photo2.jpg
-           photo3.jpg
-           photo4.jpg
-           photo5.jpg
-           photo6.jpg
-           photo7.jpeg
-           photo8.jpeg
+      <div class="collage-heading">
+
+        <div class="eyebrow">
+          A few beautiful memories
+        </div>
+
+        <h1 class="title">
+          For the memories ❤️
+        </h1>
+
+      </div>
+
+
+      <!-- =================================================
+           15 PHOTO COLLAGE
            ================================================= -->
 
       <div class="photo-collage">
+
+
+        <!-- PHOTO 1 -->
 
         <div class="collage-item">
 
@@ -2077,6 +2250,8 @@ button{
         </div>
 
 
+        <!-- PHOTO 2 -->
+
         <div class="collage-item">
 
           <img
@@ -2086,6 +2261,8 @@ button{
 
         </div>
 
+
+        <!-- PHOTO 3 -->
 
         <div class="collage-item">
 
@@ -2097,6 +2274,8 @@ button{
         </div>
 
 
+        <!-- PHOTO 4 -->
+
         <div class="collage-item">
 
           <img
@@ -2106,6 +2285,8 @@ button{
 
         </div>
 
+
+        <!-- PHOTO 5 -->
 
         <div class="collage-item">
 
@@ -2117,6 +2298,8 @@ button{
         </div>
 
 
+        <!-- PHOTO 6 -->
+
         <div class="collage-item">
 
           <img
@@ -2127,21 +2310,109 @@ button{
         </div>
 
 
+        <!-- PHOTO 7 -->
+
         <div class="collage-item">
 
           <img
-            src="images/photo7.jpeg"
+            src="images/photo7.jpg"
             alt="Rekha memory 7"
           >
 
         </div>
 
 
+        <!-- PHOTO 8 -->
+
         <div class="collage-item">
 
           <img
-            src="images/photo8.jpeg"
+            src="images/photo8.jpg"
             alt="Rekha memory 8"
+          >
+
+        </div>
+
+
+        <!-- PHOTO 9 -->
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo9.jpg"
+            alt="Rekha memory 9"
+          >
+
+        </div>
+
+
+        <!-- PHOTO 10 -->
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo10.jpg"
+            alt="Rekha memory 10"
+          >
+
+        </div>
+
+
+        <!-- PHOTO 11 -->
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo11.jpg"
+            alt="Rekha memory 11"
+          >
+
+        </div>
+
+
+        <!-- PHOTO 12 -->
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo12.jpg"
+            alt="Rekha memory 12"
+          >
+
+        </div>
+
+
+        <!-- PHOTO 13 -->
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo13.jpg"
+            alt="Rekha memory 13"
+          >
+
+        </div>
+
+
+        <!-- PHOTO 14 -->
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo14.jpg"
+            alt="Rekha memory 14"
+          >
+
+        </div>
+
+
+        <!-- PHOTO 15 -->
+
+        <div class="collage-item">
+
+          <img
+            src="images/photo15.jpg"
+            alt="Rekha memory 15"
           >
 
         </div>
@@ -2154,58 +2425,17 @@ button{
            ================================================= -->
 
       <h1 class="title final-title">
-        BIRTHMONTH HOTA HAI!!!! ❤️
+        Happy Happy Birthmonth ❤️
       </h1>
 
       <p class="subtitle final-subtitle">
-        Happy Happy Birthmonth, Rekha ✨
+        Here's to many, many more beautiful memories ✨
       </p>
 
-      <p class="small final-small">
-        May this year bring you more happiness,
-        more success, more beautiful moments,
-        and many more reasons to smile.
-      </p>
-
-      <div class="signature final-signature">
+      <div class="final-signature">
         With warmth & gratitude,<br>
         Sahil ❤️
       </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       STEP 12 — PLACEHOLDER FOR FUTURE
-       ===================================================== -->
-
-  <section
-    class="screen"
-    data-step="12"
-  >
-
-    <div class="bg"></div>
-
-    <div class="particles"></div>
-
-    <div class="content">
-
-      <div class="eyebrow">
-        Two more memories are waiting
-      </div>
-
-      <h1 class="title">
-        Photo 7 + Photo 8
-      </h1>
-
-      <p class="subtitle">
-        This section is already built.
-        Tomorrow, when you send the last two photos,
-        we can place them wherever they make the story
-        even more special.
-      </p>
 
     </div>
 
@@ -2268,6 +2498,7 @@ button{
 
 <script>
 
+
 /* =========================================================
    BASIC SETUP
    ========================================================= */
@@ -2318,7 +2549,9 @@ function makeParticles(root){
       (7 + Math.random()*8) + 's';
 
     root.appendChild(p);
+
   }
+
 }
 
 
@@ -2367,6 +2600,7 @@ function typeText(el){
   };
 
   tick();
+
 }
 
 
@@ -2422,19 +2656,17 @@ function show(i){
 
 
   if(current === 10){
+
     spawnConfetti();
+
   }
 
-
-  /*
-     Ensure the browser never keeps
-     an old scroll position.
-  */
 
   window.scrollTo(
     0,
     0
   );
+
 }
 
 
@@ -2536,7 +2768,7 @@ function startCard(){
 
 
 /* =========================================================
-   PASSWORD
+   PASSWORD BUTTON
    ========================================================= */
 
 document
